@@ -1,5 +1,4 @@
 # libresult
-[![CircleCI](https://circleci.com/gh/twincitiespublictelevision/libresult/tree/master.svg?style=svg)](https://circleci.com/gh/twincitiespublictelevision/libresult/tree/master)
 
 Library for very simple result class
 
