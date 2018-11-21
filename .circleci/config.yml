@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  phpdocs: tpt/phpdocs@0.0.5
+  phpdocs: tpt/phpdocs@0.0.6
 
 jobs:
   checkout:
@@ -53,6 +53,9 @@ jobs:
         command: ./vendor/bin/phpunit
     - store_test_results:
         path: test-results
+    - run:
+        name: Delete existing docs
+        command: rm -rf ~/project/docs/*
     - phpdocs/generate_php_docs:
         src: ~/project/src
         docs: ~/project/docs
