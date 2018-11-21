@@ -194,4 +194,4 @@ echo $resultB->valueOr("gamma"); // gamma
 
 
 --------
-> This document was automatically generated from source code comments on 2018-11-18 using [phpDocumentor](http://www.phpdoc.org/) and [cvuorinen/phpdoc-markdown-public](https://github.com/cvuorinen/phpdoc-markdown-public)
+> This document was automatically generated from source code comments on 2018-11-21 using [phpDocumentor](http://www.phpdoc.org/) and [cvuorinen/phpdoc-markdown-public](https://github.com/cvuorinen/phpdoc-markdown-public)
