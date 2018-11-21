@@ -1,4 +1,8 @@
-version: 2
+version: 2.1
+
+orbs:
+  phpdocs: tpt/phpdocs@0.0.4
+
 jobs:
   checkout:
     docker:
@@ -49,9 +53,9 @@ jobs:
         command: ./vendor/bin/phpunit
     - store_test_results:
         path: test-results
-    - run:
-        name: Create docs
-        command: ./vendor/bin/phpdoc
+    - phpdocs/generate_php_docs:
+        src: ~/project/src
+        docs: ~/project/docs
     - save_cache:
         key: docs-{{ checksum ".circle-sha" }}
         paths:
@@ -66,9 +70,6 @@ jobs:
         key: repo-{{ .Branch }}-{{ checksum ".circle-sha" }}
     - restore_cache:
         key: docs-{{ checksum ".circle-sha" }}
-    - add-ssh-keys:
-        fingerprints:
-        - "5e:6c:f7:69:68:88:a7:a1:1a:c5:81:a2:c4:7d:c1:be"
     - run:
         command: |
           rm .circle-sha
