@@ -71,6 +71,9 @@ jobs:
     - run: echo $CIRCLE_SHA1 > .circle-sha
     - restore_cache:
         key: repo-{{ .Branch }}-{{ checksum ".circle-sha" }}
+    - run:
+        name: Delete existing docs
+        command: rm -rf ~/project/docs/*
     - restore_cache:
         key: docs-{{ checksum ".circle-sha" }}
     - run:
