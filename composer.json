@@ -17,6 +17,7 @@
         "php": ">=7.1"
     },
     "autoload": {
+        "files": ["src/import_helpers.php"],
         "psr-4": {
             "Result\\": "src/",
             "Tests\\": "tests/"
