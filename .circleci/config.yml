@@ -58,7 +58,7 @@ jobs:
         command: rm -rf ~/project/docs/*
     - phpdocs/generate_php_docs:
         src: ~/project/src
-        docs: ~/project/docs
+        docs: ~/project/docs/
     - save_cache:
         key: docs-{{ checksum ".circle-sha" }}
         paths:
